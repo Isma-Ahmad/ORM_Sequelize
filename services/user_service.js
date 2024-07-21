@@ -1,7 +1,9 @@
 
-const  User = require("../models/user.js");
+const  {User} = require("../models/user.js");
 
-const Posts = require("../models/post.js");
+const {Posts} = require("../models/post.js");
+// const sequelize = require("../models/sequelize.js")
+// const { DataTypes } = require("sequelize");
 
 
 class UserService {
@@ -24,12 +26,7 @@ class UserService {
   }
 
   async createUser(name) {
-    try {
-        const user = await User.create({ name });
-        console.log('User created:', user);
-      } catch (error) {
-        console.error('Error creating user:', error);
-      }
+    return await User.create({name});
   }
 
   async updateUser(id, name) {
