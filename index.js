@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use("/", routes);
 
 // app.listen(port, ()=> console.log(`server start on port ${port}`));
-const PORT = process.env.PORT || 2000;
+const PORT =  2000;
 
 sequelize
   .sync()
